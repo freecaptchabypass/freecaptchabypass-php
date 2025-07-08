@@ -138,6 +138,14 @@
 			
 			return $this->solve($_type, $_captcha);
 		}
+
+		public function hCaptchaEnterpriseTask($_public_key, $_page_url) {
+			$_type = 'HCaptchaEnterpriseTask';
+			$_captcha['websitePublicKey'] = $_public_key;
+			$_captcha['websiteURL'] = $_page_url;
+			
+			return $this->solve($_type, $_captcha);
+		}		
 		
 		public function solve($_type, $_task) {
 			return $this->client->createTask($_type, $_task);				
